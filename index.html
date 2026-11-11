@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Subnet Calculator | AQM</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230f766e'/%3E%3Cline x1='50' y1='28' x2='26' y2='74' stroke='white' stroke-width='4'/%3E%3Cline x1='50' y1='28' x2='74' y2='74' stroke='white' stroke-width='4'/%3E%3Cline x1='26' y1='74' x2='74' y2='74' stroke='white' stroke-width='4'/%3E%3Ccircle cx='50' cy='28' r='11' fill='white'/%3E%3Ccircle cx='26' cy='74' r='11' fill='white'/%3E%3Ccircle cx='74' cy='74' r='11' fill='white'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="top">
+      <a href="../index.html" class="back">← Back to portfolio</a>
+      <h1>Subnet Calculator</h1>
+      <p class="sub">Enter an IPv4 address and choose a CIDR prefix.</p>
+    </header>
+
+    <form id="form" class="card calc-form">
+      <div class="row">
+        <div class="field">
+          <label for="ip">IP address</label>
+          <input type="text" id="ip" placeholder="192.168.1.10" value="192.168.1.10" autocomplete="off">
+        </div>
+        <div class="field">
+          <label for="prefix">CIDR prefix</label>
+          <select id="prefix">
+            <option>/24</option><option>/25</option><option>/26</option>
+            <option>/27</option><option>/28</option><option>/29</option>
+            <option>/30</option><option>/16</option><option>/8</option>
+            <option>/31</option><option>/32</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn">Calculate</button>
+      <p id="error" class="error" role="alert"></p>
+    </form>
+
+    <section id="results" class="card results" hidden>
+      <h2>Results</h2>
+      <dl>
+        <div><dt>IP address</dt><dd id="res-ip"></dd></div>
+        <div><dt>Prefix</dt><dd id="res-prefix"></dd></div>
+        <div><dt>Subnet mask</dt><dd id="res-mask"></dd></div>
+        <div><dt>Network address</dt><dd id="res-network"></dd></div>
+        <div><dt>Broadcast</dt><dd id="res-broadcast"></dd></div>
+        <div><dt>First usable host</dt><dd id="res-first"></dd></div>
+        <div><dt>Last usable host</dt><dd id="res-last"></dd></div>
+        <div><dt>Total addresses</dt><dd id="res-total"></dd></div>
+        <div class="highlight"><dt>Usable hosts</dt><dd id="res-usable"></dd></div>
+      </dl>
+    </section>
+
+    <footer class="foot">Built by Ayheza Queen S. Morada</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
